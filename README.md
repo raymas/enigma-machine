@@ -1,7 +1,7 @@
 # Enigma
 
 <p align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Enigma-logo.jpg" alt="Engima logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Enigma-logo.jpg" alt="Enigma logo" />
 </p>
 
 The enigma cipher machine in python.
@@ -30,7 +30,7 @@ The machine is composed of the following elements:
 
 - a keyboard for user input,
 - multiple rotors which are rotating parts that perform the cipher operation using a scrambled electrical wiring,
-- a front panel plugboard allowing an additionnal substitution. This make the deciphering operation insanely more difficult (over 150,738,274,937,250 additionnal substitutions using 10 pairs),
+- a front panel plugboard allowing an additional substitution. This make the deciphering operation insanely more difficult (over 150,738,274,937,250 additional substitutions using 10 pairs),
 - a light panel with 26 lamps labeled from A to Z.
 
 The cipher process can be described as follow :
@@ -43,13 +43,13 @@ The user press a letter on the keyboard making the first rotor to rotate. The ke
 
 ### Rotors
 
-Rotors are the rotating part of the enigma machine. Most machines contains three of them but an additionnal one can be found on some variant (e.g. M4 variant for the Kriegsmarine with the _greek_ wheel).
+Rotors are the rotating part of the enigma machine. Most machines contains three of them but an additional one can be found on some variant (e.g. M4 variant for the Kriegsmarine with the _greek_ wheel).
 
 Rotors' positions are numbered from A to Z and possess turnover positions. When a rotor reach a turnover position, it rotates its closest left neighbour.
 
 Rotors' internal wiring can be shifted prior any operation by rotating a ring to a certain position. This setting is often called the _Ringstellung_.
 
-The wiring pattern is usely represented with an alphabeter string. Each alphabet chacracter is replaced by the corresponding letter in the string. For instance the string: **EKMFLGDQVZNTOWYHXUSPAIBRCJ** means that a **A** substitute to an **E**, a **B** to an **K** and so on. The same logic applies for the remaining characters as shown below.
+The wiring pattern is usually represented with an alphabet string. Each alphabet character is replaced by the corresponding letter in the string. For instance the string: **EKMFLGDQVZNTOWYHXUSPAIBRCJ** means that a **A** substitute to an **E**, a **B** to an **K** and so on. The same logic applies for the remaining characters as shown below.
 
 ```
 ABCDEFGHIJKLMNOPQRSTUVWXYZ      keyboard    reflector
@@ -152,7 +152,7 @@ from enigma.plugboard import Plugboard
 plugboard = Plugboard("qd fe rw jn il ps cm ax kg yu")
 ```
 
-Then, we construct the machine using the predefined M3 rotors from the `engima.rotor.Rotors` class (see below if you want to create yours).
+Then, we construct the machine using the predefined M3 rotors from the `enigma.rotor.Rotors` class (see below if you want to create yours).
 
 ```python
 from enigma.rotor import Rotors
@@ -184,7 +184,7 @@ M3.set_rotor_ringstellung("II", "E")
 M3.set_rotor_ringstellung("III", "F")
 ```
 
-And then provide the input text (split is optionnal it adds an additionnal space every n character):
+And then provide the input text (split is optional it adds an additional space every n character):
 
 ```python
 plaintext = M3.encode("xgytk npnkq ssnxw kyf", split=0)
